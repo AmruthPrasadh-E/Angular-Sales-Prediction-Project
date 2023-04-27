@@ -1,0 +1,27 @@
+<!-- <p>dropzonearea works!</p> -->
+<div class="app-wave-background">
+<h1 class="container" [@fadeIn]>Upload Your file for Forecasting</h1>
+
+<mat-card class="example-card" [@fadeIn]>
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <ngx-dropzone (change)="onSelect($event)">
+      <mat-card-header>
+        <ngx-dropzone-label>Drop The File!</ngx-dropzone-label>
+      </mat-card-header>
+
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+        <mat-card-subtitle>
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </mat-card-subtitle>
+      </ngx-dropzone-preview>
+    </ngx-dropzone>
+    <p *ngFor="let f of files">
+      {{ f.name }} ({{ f.type }})
+    </p>
+      <button type="submit" (ngSubmit)="onSubmit()">Upload</button>
+  </form>
+  <div *ngIf="response">
+    {{ response.message }} {{ response.data }}
+  </div>
+</mat-card>
+</div>

@@ -1,0 +1,156 @@
+
+<h1 class="container" [@fadeIn]>Prediction of The Sales</h1>
+<!--
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title>Enter Sales Data</mat-card-title>
+    <mat-card-content>
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Store</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="store" id="store" matInput placeholder="Enter Store number" [(ngModel)]="formData.store" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Store:[1-10]</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Item</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="item" id="item" matInput placeholder="Enter item number" [(ngModel)]="formData.item" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Item:[1-50]</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Year</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="year" id="year" matInput placeholder="Enter Year" [(ngModel)]="formData.year" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Year</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Month</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="month" id="month" matInput placeholder="Enter Month" [(ngModel)]="formData.month" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Month:[1-12]</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Day</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="day" id="day" matInput placeholder="Enter Day" [(ngModel)]="formData.day" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Day</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" class="example-form-field">
+        <span class="mat-form-field-label-wrapper">
+          <mat-label class="mat-form-field-label">Weekday</mat-label>
+        </span>
+        <div class="mat-form-field-flex">
+          <div class="mat-form-field-infix">
+            <input type="text" name="weekday" id="weekday" matInput placeholder="Enter Weekday" [(ngModel)]="formData.weekday" required style="width: 200px;">
+          </div>
+          <span class="mat-form-field-suffix">
+            <mat-hint>Weekday:[0-6]</mat-hint>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary">Predict</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<mat-card *ngIf="response">
+  <mat-card-title>Predicted Sales Rate:</mat-card-title>
+  <mat-card-content>{{ response | json }}</mat-card-content>
+</mat-card> -->
+
+<div class="container1" [@fadeIn]>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header">
+        <h2>Enter Sales Data</h2>
+      </div>
+      <form class="form" #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Store</label><br>
+            <input type="number" class="form-control" name="store" id="store" placeholder="Enter Store number" [(ngModel)]="formData.store" required>
+          </div>
+          <div class="form-group">
+            <label>Item</label><br>
+            <input type="number" class="form-control" name="item" id="item" placeholder="Enter item number" [(ngModel)]="formData.item" required>
+          </div>
+          <div class="form-group">
+            <label>Year</label><br>
+            <input type="number" class="form-control" name="year" id="year" placeholder="Enter Year" [(ngModel)]="formData.year" required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Month</label><br>
+            <input type="number" class="form-control" name="month" id="month" placeholder="Enter Month" [(ngModel)]="formData.month" required>
+          </div>
+          <div class="form-group">
+            <label>Day</label><br>
+            <input type="number" class="form-control" name="day" id="day" placeholder="Enter Day" [(ngModel)]="formData.day" required>
+          </div>
+          <div class="form-group">
+            <label>Weekday</label><br>
+            <input type="number" class="form-control" name="weekday" id="weekday" placeholder="Enter Weekday" [(ngModel)]="formData.weekday" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Predict</button><br>
+        <div class="card-header" style="margin-right: 10px; margin-left: 10px;" *ngIf="response"><h2 style="font-size: 30px;margin-left: 0%;
+          margin-right: 0%; color: rgb(56, 1, 69);">The Predicted Sales for the given input data:</h2><br><h2 style="font-size: 20px;margin-left: 30%;
+          margin-right: 25%; color: rgb(56, 1, 69);">{{ response | json }}</h2></div>
+      </form>
+    </div>
+  </div>
+</div>
